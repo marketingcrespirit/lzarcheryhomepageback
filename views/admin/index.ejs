@@ -1,0 +1,59 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+    <body>
+        <h1 class="text-center mt-5">請聯絡我</h1>
+        <input id="today" name="today" class="ml-5" type="checkbox">
+        <label for="today">Today</label>
+
+        <label class="ml-5" for="date">Date</label>
+        <input name="date" type="input">
+            <main>
+                <% if (guests.length > 0) { %>
+                    <div class="grid">
+                        <% for (let guest of guests) { %>
+                            <article class="card product-item">
+                                <header class="card__header">
+                                    <h1 class="">
+                                        <%= guest.name %>
+                                    </h1>
+                                </header>
+                                <div class="card__content">
+                                    <h2 class="mt-1">
+                                        <%= guest.email %>
+                                    </h2>
+                                    <p class="mt-1">
+                                        <%= guest.phone %>
+                                    </p>
+                                    <p class="mt-1 time">
+                                            <%= guest.time %>
+                                        </p>
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No guests Found!</h1>
+                        <% } %>
+            </main>
+
+            <script>
+                const cards = document.getElementsByTagName('article')
+                var length = Array.prototype.slice.call( cards, 0 ).length;
+                const isToday = document.getElementById('today')
+                const d = new Date()
+                isToday.addEventListener('change', () => {
+                    if (isToday.checked) {
+                        cardsArr.forEach(el => {
+                            let date = new Date(el.querySelector('.time').innerText).toDateString
+                            const bool = (d.toDateString() === date);
+
+                        })
+                    }
+                })
+                
+
+            </script>
+            <%- include('../includes/end.ejs') %>
