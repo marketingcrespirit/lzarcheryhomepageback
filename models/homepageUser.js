@@ -2,13 +2,14 @@ const mongodb = require("mongodb");
 const getDb = require("../util/database").getDb;
 
 class HomepageUser {
-  constructor(name, phone, period, hour, email, question) {
+  constructor(name, phone, period, hour, email, question, other) {
     this.name = name;
     this.phone = phone;
     this.period = period;
     this.hour = hour;
     this.email = email;
     this.question = question;
+    this.other = other;
     this.time = new Date();
   }
 
