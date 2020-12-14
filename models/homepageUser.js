@@ -2,12 +2,13 @@ const mongodb = require("mongodb");
 const getDb = require("../util/database").getDb;
 
 class HomepageUser {
-  constructor(name, phone, period, hour, email) {
+  constructor(name, phone, period, hour, email, question) {
     this.name = name;
     this.phone = phone;
     this.period = period;
     this.hour = hour;
     this.email = email;
+    this.question = question;
     this.time = new Date();
   }
 
@@ -21,10 +22,10 @@ class HomepageUser {
       dbOp = db.collection("homepageUser").insertOne(this);
     }
     return dbOp
-      .then(result => {
+      .then((result) => {
         console.log(result);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -42,11 +43,11 @@ class HomepageUser {
     return db
       .collection("homepageUser")
       .findOne({ _id: new ObjectId(guestId) })
-      .then(user => {
+      .then((user) => {
         console.log(user);
         return user;
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
