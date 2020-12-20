@@ -35,7 +35,7 @@ exports.postUser = (req, res, next) => {
     })
     .then(result => {
       const msg = {
-        to: "jimchou223@gmail.com",
+        to: "lzarchery@crespirit.com",
         from: "jim@crespirit.com",
         subject: "聯絡我需求-兒童班網站",
         html: `<strong>請聯絡我</strong> <p>姓名: ${name}</p><p>電話: ${phone}</p><p>平日or假日: ${period}</p><p>方便聯絡時間: ${hour}</p><p>Email: ${email}</p><p>學童姓名: ${kidName}</p><p>學童年齡: ${kidAge}</p><p>學童性別: ${kidGender}</p><p>居住地: ${home}</p>`
