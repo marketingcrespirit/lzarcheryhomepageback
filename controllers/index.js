@@ -63,7 +63,7 @@ exports.postHomepageUser = (req, res, next) => {
         to: "lzarchery@crespirit.com",
         from: "jim@crespirit.com",
         subject: "聯絡我需求-官網",
-        html: `<strong>請聯絡我</strong> <p>姓名: ${name}</p><p>電話: ${phone}</p><p>平日or假日: ${period}</p><p>方便聯絡時間: ${hour}</p><p>Email: ${email}</p><p>需求: ${question}</p><p>其他補充: ${other}</p>`
+        html: `<strong>請聯絡我</strong> <p>姓名: ${name}</p><p>電話: ${phone}</p><p>方便聯絡時間: ${hour}</p><p>Email: ${email}</p><p>需求: ${question}</p><p>其他補充: ${other}</p>`
       };
       return sgMail.send(msg);
     })
